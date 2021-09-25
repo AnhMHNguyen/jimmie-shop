@@ -101,7 +101,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')    
+            os.path.join(BASE_DIR, 'build')    
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -185,12 +185,12 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-#     BASE_DIR / 'frontend/build/static'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'build/static'
+]
 
-# MEDIA_ROOT = 'static/images'
+MEDIA_ROOT = 'static/images'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
@@ -198,9 +198,13 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '743186937154313',
     'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
 }
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.getcwd() == '/app':
+    DEBUG = False
