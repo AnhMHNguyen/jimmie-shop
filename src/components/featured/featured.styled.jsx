@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {IoChevronForwardOutline, IoChevronBackOutline} from 'react-icons/io5'
-import { CollectionItemContainer } from '../collection-item/collection-item.styles';
 
 export const FeaturedContainer = styled.div`
   width: 100%;

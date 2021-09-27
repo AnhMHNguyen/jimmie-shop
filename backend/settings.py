@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5*@dozk=!=gp6qau-j-l0ql#^shy*)!)*5==s=a+4xx9^2&6$z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://jimmie-shop.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,20 +130,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jimmie-shop',
-        'USER': 'postgres',
-        'PASSWORD': 'Hieu2401',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
-    }
-}
-
 # DATABASES = {
-#     'default': dj_database_url.config()
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'jimmie-shop',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Hieu2401',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432'
+#     }
 # }
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 
 
@@ -185,14 +185,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
+# MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     # BASE_DIR / 'static',
     BASE_DIR / 'build/static'
 ]
 
-MEDIA_ROOT = 'static/images'
+# MEDIA_ROOT = 'static/images'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {

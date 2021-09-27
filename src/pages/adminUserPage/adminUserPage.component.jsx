@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { useSelector, useDispatch} from 'react-redux'
 import Spinner from '../../components/spinner/spinner.component'
 import ErrorFallBack from '../../components/error-boundary/error-boundary.component'
-import { selectUserList, selectUserMessage, selectUserError, selectUserLoading} from '../../redux/user/user.selectors'
+import { selectUserList, selectUserMessage, selectUserError } from '../../redux/user/user.selectors'
 import { adminUserStart, fetchUsersStart } from '../../redux/user/user.actions'
 import { AdminUserPageContainer, ContentContainer, TitleContainer, HeaderContainer, HeaderBlock, DetailsContainer, DetailsBlock } from './adminUserPage.styles'
 

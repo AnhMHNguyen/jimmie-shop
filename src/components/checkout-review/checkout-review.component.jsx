@@ -33,7 +33,7 @@ const CheckoutReview = ({ history }) => {
     if (window.paypal) {
       setSdkReady(true)
     }
-  }, [ dispatch, message])
+  }, [ dispatch, message, history])
 
   const successPaymentHandler = ({ status }) => {
     // dispatch(payOrder(orderId, paymentResult))

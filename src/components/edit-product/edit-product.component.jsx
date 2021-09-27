@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 import { uploadImageStart, updateProductStart } from '../../redux/shop/shop.actions'
-import { selectImageMessage, selectIsCollectionFetching } from '../../redux/shop/shop.selectors'
+import { selectImageMessage } from '../../redux/shop/shop.selectors'
 import { EditProductContainer, TitleContainer, ImageLabel, CategoryContainer, NumberLabel, NumberInput, DescriptionContainer } from './edit-product.styles'
 
 const EditProduct = ({ product, close }) => {
   const dispatch = useDispatch()
   const imageMessage = useSelector(selectImageMessage)
-  const uploading = useSelector(selectIsCollectionFetching)
   const [ productCredentials, setCredentials ] = useState ({
     name: '',
     price: 0,

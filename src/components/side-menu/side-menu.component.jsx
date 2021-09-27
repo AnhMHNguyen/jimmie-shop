@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import { Link } from 'react-router-dom'
 import { SideMenuContainer, LinkContainer, MenuTitle } from './side-menu.styles'
 
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectOrderDetails, selectIsOrderLoading, selectOrderError } from '../../redux/order/order.selectors'
+import { selectOrderDetails, selectOrderError } from '../../redux/order/order.selectors'
 import Spinner from '../../components/spinner/spinner.component'
 import ErrorFallBack from '../../components/error-boundary/error-boundary.component'
 import { orderDetailsStart } from '../../redux/order/order.actions'
@@ -10,7 +10,6 @@ import { OrderPageContainer, ContentContainer, TitleContainer, PriceDetailsConta
 const OrderPage = ({ match }) => {
   const orderId = match.params.id
   const dispatch = useDispatch()
-  const isLoading = useSelector(selectIsOrderLoading)
   const error = useSelector(selectOrderError)
   const order = useSelector(selectOrderDetails)
 

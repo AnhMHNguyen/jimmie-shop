@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Spinner from '../spinner/spinner.component'
 import CollectionItem from '../collection-item/collection-item.component'
