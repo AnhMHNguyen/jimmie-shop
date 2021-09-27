@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5*@dozk=!=gp6qau-j-l0ql#^shy*)!)*5==s=a+4xx9^2&6$z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +46,6 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'phonenumber_field',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
 ]
 
@@ -197,7 +198,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
