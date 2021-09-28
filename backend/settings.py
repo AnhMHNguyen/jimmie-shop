@@ -199,7 +199,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'))
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
     
 MEDIA_ROOT = 'static/images'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
