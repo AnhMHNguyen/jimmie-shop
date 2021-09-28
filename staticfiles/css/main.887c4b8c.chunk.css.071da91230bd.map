@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACE,qBACF,CAEA,KACE,8BAAgC,CAChC,QACF","file":"main.887c4b8c.chunk.css","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Dosis', sans-serif;\n  margin: 0;\n}"]}
