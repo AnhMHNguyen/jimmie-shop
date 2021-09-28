@@ -10,13 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
+# from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
+# import django_heroku
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5*@dozk=!=gp6qau-j-l0ql#^shy*)!)*5==s=a+4xx9^2&6$z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -131,27 +131,28 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6jl7rr278io1e',
-        'USER': 'zzralcayvnqgxp',
-        'PASSWORD': '95aa4dbee2f2046ac7a82800eb2565f4633beb43aa4ef9298e9a45845595aa22',
-        'HOST': 'ec2-34-233-187-36.compute-1.amazonaws.com',
-        'PORT': '5432'
-    }
-}
-# if DEBUG :
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'jimmie-shop',
-#             'USER': 'postgres',
-#             'PASSWORD': 'Hieu2401',
-#             'HOST': '127.0.0.1',
-#             'PORT': '5432'
-#         }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd6jl7rr278io1e',
+#         'USER': 'zzralcayvnqgxp',
+#         'PASSWORD': '95aa4dbee2f2046ac7a82800eb2565f4633beb43aa4ef9298e9a45845595aa22',
+#         'HOST': 'ec2-34-233-187-36.compute-1.amazonaws.com',
+#         'PORT': '5432'
 #     }
+# }
+
+# if DEBUG :
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql',
+    #         'NAME': 'jimmie-shop',
+    #         'USER': 'postgres',
+    #         'PASSWORD': 'Hieu2401',
+    #         'HOST': '127.0.0.1',
+    #         'PORT': '5432'
+    #     }
+    # }
 # else:  
 #     DATABASES = {
 #         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
@@ -196,19 +197,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-MEDIA_URL = '/images/'
-
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
     
-MEDIA_ROOT = 'static/images'
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'ds4m4cban',
-    'API_KEY': '743186937154313',
-    'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'ds4m4cban',
+#     'API_KEY': '743186937154313',
+#     'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
+# }
+CORS_ORIGIN_ALLOW_ALL = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -220,4 +222,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if os.getcwd() == '/app':
     DEBUG = False
     
-django_heroku.settings(locals())
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+# django_heroku.settings(locals())
