@@ -131,31 +131,31 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'jimmie-shop',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Hieu2401',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6jl7rr278io1e',
+        'USER': 'zzralcayvnqgxp',
+        'PASSWORD': '95aa4dbee2f2046ac7a82800eb2565f4633beb43aa4ef9298e9a45845595aa22',
+        'HOST': 'ec2-34-233-187-36.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
+# if DEBUG :
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'jimmie-shop',
+#             'USER': 'postgres',
+#             'PASSWORD': 'Hieu2401',
+#             'HOST': '127.0.0.1',
+#             'PORT': '5432'
+#         }
 #     }
-# }
-if DEBUG :
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'jimmie-shop',
-            'USER': 'postgres',
-            'PASSWORD': 'Hieu2401',
-            'HOST': '127.0.0.1',
-            'PORT': '5432'
-        }
-    }
-else:  
-    DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
+# else:  
+#     DATABASES = {
+#         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+#     }
 
 
 
