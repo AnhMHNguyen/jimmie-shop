@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # from pathlib import Path
 import os
-# import django_heroku
-# import dj_database_url
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -141,16 +141,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         'PORT': '5432'
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jimmie-shop',
-        'USER': 'postgres',
-        'PASSWORD': 'Hieu2401',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'jimmie-shop',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Hieu2401',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432'
+#     }
+# }
 # if DEBUG :
     # DATABASES = {
     #     'default': {
@@ -166,7 +166,9 @@ DATABASES = {
 #     DATABASES = {
 #         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 #     }
-
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}
 
 
 # Password validation
@@ -215,11 +217,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'ds4m4cban',
-#     'API_KEY': '743186937154313',
-#     'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'ds4m4cban',
+    'API_KEY': '743186937154313',
+    'API_SECRET': 'JczjMHp3NafYE0OOgaSU0ECmVFo'
+}
 CORS_ORIGIN_ALLOW_ALL = True
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -231,8 +233,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if os.getcwd() == '/app':
     DEBUG = False
     
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-# django_heroku.settings(locals())
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
+django_heroku.settings(locals())
