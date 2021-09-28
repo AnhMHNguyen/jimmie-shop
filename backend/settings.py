@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5*@dozk=!=gp6qau-j-l0ql#^shy*)!)*5==s=a+4xx9^2&6$z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -141,10 +141,21 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         'PORT': '5432'
 #     }
 # }
-
-DATABASES = {
-    'default': dj_database_url.config()
-}
+if DEBUG :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'jimmie-shop',
+            'USER': 'postgres',
+            'PASSWORD': 'Hieu2401',
+            'HOST': '127.0.0.1',
+            'PORT': '5432'
+        }
+    }
+else:  
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
 
 
 
@@ -188,9 +199,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'build/static'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'build/static'
+]
 MEDIA_ROOT = 'static/images'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
