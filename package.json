@@ -2,7 +2,7 @@
   "name": "jimmiepetshop",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:8000",
+  "proxy": "http://134.122.33.155",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
