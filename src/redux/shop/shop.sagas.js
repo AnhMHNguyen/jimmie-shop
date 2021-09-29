@@ -6,7 +6,7 @@ import { fetchCollectionsSuccess, fetchCollectionsFailure, fetchProductSuccess, 
 
 export function* fetchCollections({ payload: category}) {
   try {
-    const { data } = yield axios.get(`/api/products/${category}/`);
+    const { data } = yield axios.get(`/api/products/${category}`);
     yield put(fetchCollectionsSuccess(data))
   } catch(error) {
     yield put(fetchCollectionsFailure(error))
