@@ -50,6 +50,12 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         product: action.payload
       }
     case ShopActionTypes.UPDATE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        product: null,
+        message: action.payload,
+      }
     case ShopActionTypes.DELETE_PRODUCT_SUCCESS:
     case ShopActionTypes.UPLOAD_REVIEW_SUCCESS:
       return {

@@ -1,9 +1,8 @@
 import ShopActionTypes from "./shop.types";
 
 
-export const fetchCollectionsStart = (category='') => ({
+export const fetchCollectionsStart = () => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_START, 
-  payload: category
 });
 
 export const fetchCollectionsSuccess = collectionsMap => ({

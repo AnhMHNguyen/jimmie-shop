@@ -4,9 +4,9 @@ import ShopActionTypes from "./shop.types";
 import { selectCurrentUser } from "../user/user.selectors";
 import { fetchCollectionsSuccess, fetchCollectionsFailure, fetchProductSuccess, fetchProductFailure, createProductSuccess, createProductFailure, updateProductSuccess, updateProductFailure, uploadImageSuccess, uploadImageFailure, deleteProductSuccess, deleteProductFailure, uploadReviewSuccess, uploadReviewFailure, fetchDirectorySuccess, fetchDirectoryFailure} from "./shop.actions";
 
-export function* fetchCollections({ payload: category}) {
+export function* fetchCollections() {
   try {
-    const { data } = yield axios.get(`/api/products/${category}`);
+    const { data } = yield axios.get(`/api/products/`);
     yield put(fetchCollectionsSuccess(data))
   } catch(error) {
     yield put(fetchCollectionsFailure(error))

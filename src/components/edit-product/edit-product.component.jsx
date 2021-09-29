@@ -23,7 +23,7 @@ const EditProduct = ({ product, close }) => {
 
   useEffect(() => {
     if(product !== null) setCredentials({...product})
-    if(imageMessage !== null) setCredentials({...productCredentials, image: imageMessage})
+    if(imageMessage !== null) setCredentials(p => ({...p, image: imageMessage}))
   }, [product, imageMessage])
 
   const handleSubmit = async event => {

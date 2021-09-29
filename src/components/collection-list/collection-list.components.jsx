@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import SideMenu from '../../components/side-menu/side-menu.component'
 import SideDrawer from '../side-drawer/side-drawer.component'
 import Backdrop from '../backdrop/backdrop.component'
+import Spinner from '../spinner/spinner.component'
 import CartList from '../cart-list/cart-list.component'
 import CollectionItem from '../../components/collection-item/collection-item.component'
+import { selectCollection } from '../../redux/shop/shop.selectors.js'
 import { CollectionListContainer, SideMenuContainer, ListContainer, GridContainer } from './collection-list.styles'
 
-const CollectionList = ({collection}) => {
+const CollectionList = ({category}) => {
+  const collection = useSelector(selectCollection(category))
   const [ toggle, setToggle ] = useState(false)
   const openHandler = () => {
     setToggle(true)
@@ -15,8 +19,7 @@ const CollectionList = ({collection}) => {
   const closeHandler = () => {
     setToggle(false)
   }
-
-  return (
+  return !collection ? <Spinner/> : (
     <>
       <CollectionListContainer>
           <SideMenuContainer>

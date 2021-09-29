@@ -7,6 +7,12 @@ export const selectShopCollections = createSelector(
   shop => shop.collections
 );
 
+export const selectCollection = (category="") =>
+  createSelector(
+    [selectShopCollections],
+    collections => !collections ? null : category ? collections.filter(item => item.category === category) : collections 
+  );
+
 export const selectShopDirectory = createSelector(
   [selectShop],
   shop => shop.directory

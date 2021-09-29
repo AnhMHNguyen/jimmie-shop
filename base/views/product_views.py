@@ -16,15 +16,8 @@ def getCategory(request):
 
 
 @api_view(['GET'])
-def getProducts(request, category=''):
-  if not category:
-    products = Product.objects.all()
-  else:
-    
-    products = Product.objects.filter(category__name=category)
-    if not products:
-      return Response({'detail': 'Category does not exist'}, status=status.HTTP_400_BAD_REQUEST)
-    
+def getProducts(request):
+  products = Product.objects.all()
   serializer = ProductSerializer(products, many=True)
   return Response(serializer.data)
   # query = request.query_params.get('category')

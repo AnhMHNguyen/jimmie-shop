@@ -7,7 +7,7 @@ import SideDrawer from '../../components/side-drawer/side-drawer.component'
 import Backdrop from '../../components/backdrop/backdrop.component'
 import CartList from '../../components/cart-list/cart-list.component'
 import ErrorFallBack from '../../components/error-boundary/error-boundary.component'
-import { selectShopProduct, selectIsCollectionFetching, selectShopMessage, selectShopError } from '../../redux/shop/shop.selectors'
+import { selectShopProduct, selectShopMessage, selectShopError } from '../../redux/shop/shop.selectors'
 import { fetchProductStart } from '../../redux/shop/shop.actions.js'
 import { addItem } from '../../redux/cart/cart.actions'
 import { ProductPageContainer, ContentContainer, ImageContainer, ItemDetailsContainer, ItemName, ItemDescription, ItemPrice, AddButton, QuantityButton, QuantityContainer, QuantityInput, OutOfStockContainer, Divider, RatingContainer } from './productPage.styles'
@@ -18,7 +18,6 @@ const ProductPage = ({ match }) => {
   const productId = match.params.id
   const product = useSelector(selectShopProduct)
   const message = useSelector(selectShopMessage)
-  const isFetching = useSelector(selectIsCollectionFetching)
   const error = useSelector(selectShopError)
   const dispatch = useDispatch()
   const [ count, setCount ] = useState(1)
