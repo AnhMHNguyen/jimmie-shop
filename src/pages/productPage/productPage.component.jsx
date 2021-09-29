@@ -41,7 +41,7 @@ const ProductPage = ({ match }) => {
   }
   
   return  error ? <ErrorFallBack error={error} /> : 
-    ( isFetching || !product ) ? <Spinner /> : (
+    ( error === null && product === null ) ? <Spinner /> : (
     <>
       <ProductPageContainer>
         <ContentContainer> 

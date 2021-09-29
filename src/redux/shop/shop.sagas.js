@@ -6,7 +6,7 @@ import { fetchCollectionsSuccess, fetchCollectionsFailure, fetchProductSuccess, 
 
 export function* fetchCollections({ payload: category}) {
   try {
-    const { data } = yield axios.get(`/api/products/${category}`);
+    const { data } = yield axios.get(`/api/products/${category}/`);
     yield put(fetchCollectionsSuccess(data))
   } catch(error) {
     yield put(fetchCollectionsFailure(error))
@@ -24,7 +24,7 @@ export function* fetchDirectory() {
 
 export function* fetchProduct({ payload: { productId }}) {
   try {
-    const { data } = yield axios.get(`/api/products/product/${productId}`);
+    const { data } = yield axios.get(`/api/products/product/${productId}/`);
     yield put(fetchProductSuccess(data))
   } catch(error) {
     yield put(fetchProductFailure(error))

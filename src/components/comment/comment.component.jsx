@@ -24,7 +24,7 @@ const Comment = ({ reviews, rating, numReviews, productId }) => {
     <CommentContainer>
       <TitleContainer>Customer Reviews</TitleContainer>
       <ContentContainer>
-        {reviews.length > 0 ? 
+        { reviews && reviews.length > 0 ? 
           <>
             <Rating value={rating} large={true}/>
             <span>Based on {numReviews} reviews</span>
@@ -43,7 +43,7 @@ const Comment = ({ reviews, rating, numReviews, productId }) => {
             <Divider />
           </>
         }
-        { reviews.length > 0 && 
+        { reviews && reviews.length > 0 && 
           reviews.map(review => 
         
             <ReviewContainer key={review._id}>
