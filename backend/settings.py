@@ -131,16 +131,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd6jl7rr278io1e',
-#         'USER': 'zzralcayvnqgxp',
-#         'PASSWORD': '95aa4dbee2f2046ac7a82800eb2565f4633beb43aa4ef9298e9a45845595aa22',
-#         'HOST': 'ec2-34-233-187-36.compute-1.amazonaws.com',
-#         'PORT': '5432'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6jl7rr278io1e',
+        'USER': 'zzralcayvnqgxp',
+        'PASSWORD': '95aa4dbee2f2046ac7a82800eb2565f4633beb43aa4ef9298e9a45845595aa22',
+        'HOST': 'ec2-34-233-187-36.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -166,9 +166,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     DATABASES = {
 #         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 #     }
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-}
+# DATABASES = {
+#     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+# }
 
 
 # Password validation
