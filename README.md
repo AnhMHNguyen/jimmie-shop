@@ -17,27 +17,35 @@ This project is an Ecommerce website using Django and React with full featured s
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275815/images/jimmieshop/jimmie10_gj0qhh.jpg" alt="" />
 
+
 **2. Featured Items and Shop Category**
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275814/images/jimmieshop/jimmie2_xsbgs5.jpg" alt="" />
 
-**3. Shopping Page and Shopping Bag**
+
+**3. Product Detail Page and Comment section with verified buyer function**
+
+<img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637279276/images/jimmieshop/Capture12_epfvwn.jpg" alt="" />
+
+
+**4. Shopping Page and Shopping Bag**
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275814/images/jimmieshop/jimmie4_ft4ole.jpg" alt="" />
-
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275814/images/jimmieshop/jimmie5_i4qe31.jpg" alt="" />
 
-**4. Check Out Page with Paypal Payment**
+
+**5. Check Out Page with Paypal Payment**
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275814/images/jimmieshop/jimmie6_eoibxr.jpg" alt="" />
 
-**5. Account Management and Order History with Order Detail Page**
+
+**6. Account Management and Order History with Order Detail Page**
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275815/images/jimmieshop/jimmie7_c7fsi7.jpg" alt="" />
-
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275815/images/jimmieshop/jimmie8_floiz9.jpg" alt="" />
 
-**6. Admin Management Page with User, Product and Order Management**
+
+**7. Admin Management Page with User, Product and Order Management**
 
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275815/images/jimmieshop/jimmie9_vzhqwp.jpg" alt=""/>
 <img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275815/images/jimmieshop/jimmie11_wt4tmm.jpg" alt="" />
