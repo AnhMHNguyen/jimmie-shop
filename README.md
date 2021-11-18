@@ -7,6 +7,9 @@
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
 
+<img src="https://res.cloudinary.com/ds4m4cban/image/upload/v1637275814/images/jimmieshop/jimmie1_dmnoq6.jpg" alt="" />
+
 This project is an Ecommerce website using Django and React with full featured shopping cart, product reviews and ratings, user profile with orders, admin product, user and order management, checkout process and Paypal.
 
 [View Demo](https://jimmie-shop.herokuapp.com/)
+
